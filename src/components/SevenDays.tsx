@@ -45,34 +45,38 @@ const SevenDays = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-background">
-      <div className="max-w-2xl mx-auto">
-        <p className="text-sm font-medium tracking-widest uppercase text-[hsl(var(--accent))] text-center mb-4">
-          O Protocolo
-        </p>
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-4 tracking-tight">
-          7 dias. 21 minutos.
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-md mx-auto">
-          Cada lição constrói sobre a anterior. O resultado: independência energética.
-        </p>
+    <section className="py-20 md:py-32 px-6 bg-secondary/50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-1/3 h-1/2 bg-[hsl(var(--accent)/0.05)] blur-[100px]" />
+      
+      <div className="max-w-2xl mx-auto relative z-10">
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1.5 bg-[hsl(var(--accent)/0.15)] border border-[hsl(var(--accent)/0.3)] rounded text-xs font-bold uppercase tracking-widest text-[hsl(var(--accent))] mb-4">
+            O Protocolo
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-4">
+            7 dias. <span className="text-[hsl(var(--accent))]">21 minutos.</span>
+          </h2>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Cada lição é um upgrade. O resultado: independência total.
+          </p>
+        </div>
         
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="space-y-2">
           {days.map((day) => (
             <AccordionItem 
               key={day.day} 
               value={`day-${day.day}`}
-              className="bg-card border border-border rounded-2xl px-6 hover:border-[hsl(var(--accent)/0.5)] transition-all duration-300"
+              className="bg-card border border-border rounded px-5 hover:border-[hsl(var(--accent))] transition-all duration-200 group"
             >
-              <AccordionTrigger className="text-left hover:no-underline py-5">
+              <AccordionTrigger className="text-left hover:no-underline py-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[hsl(var(--accent))] flex items-center justify-center text-sm font-semibold text-white">
-                    {day.day}
+                  <div className="flex-shrink-0 w-10 h-10 rounded bg-[hsl(var(--accent))] flex items-center justify-center text-sm font-black text-white">
+                    {String(day.day).padStart(2, '0')}
                   </div>
-                  <span className="text-base font-medium">{day.title}</span>
+                  <span className="text-base font-bold uppercase tracking-wide group-hover:text-[hsl(var(--accent))] transition-colors">{day.title}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5 pl-14">
+              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4 pl-14">
                 {day.description}
               </AccordionContent>
             </AccordionItem>
