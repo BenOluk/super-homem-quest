@@ -34,26 +34,28 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-secondary/30">
+    <section className="py-20 md:py-32 px-6 bg-secondary/50">
       <div className="max-w-2xl mx-auto">
-        <p className="text-sm font-medium tracking-widest uppercase text-[hsl(var(--accent))] text-center mb-4">
-          Dúvidas
-        </p>
-        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 tracking-tight">
-          Perguntas frequentes
-        </h2>
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-1.5 bg-[hsl(var(--accent)/0.15)] border border-[hsl(var(--accent)/0.3)] rounded text-xs font-bold uppercase tracking-widest text-[hsl(var(--accent))] mb-4">
+            FAQ
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
+            Perguntas frequentes
+          </h2>
+        </div>
         
-        <Accordion type="single" collapsible className="space-y-3">
+        <Accordion type="single" collapsible className="space-y-2">
           {faqs.map((faq, index) => (
             <AccordionItem 
               key={index} 
               value={`item-${index}`}
-              className="bg-card border border-border rounded-2xl px-6 hover:border-[hsl(var(--accent)/0.5)] transition-all duration-300"
+              className="bg-card border border-border rounded px-5 hover:border-[hsl(var(--accent))] transition-all duration-200 group"
             >
-              <AccordionTrigger className="text-left text-sm font-medium hover:text-[hsl(var(--accent))] hover:no-underline py-5">
+              <AccordionTrigger className="text-left text-sm font-bold uppercase tracking-wide hover:text-[hsl(var(--accent))] hover:no-underline py-4">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-4">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
