@@ -9,64 +9,70 @@ const SevenDays = () => {
   const days = [
     {
       day: 1,
-      title: "Mente Heróica",
-      description: "Descubra como ordenar sua mente e eliminar pensamentos negativos. Cultive foco, atenção e clareza mental."
+      title: "Reset Neural",
+      description: "Elimine a névoa mental. Técnicas para restaurar sua capacidade de concentração profunda e pensamento claro."
     },
     {
       day: 2,
-      title: "O Segredo da Testosterona",
-      description: "7 técnicas ancestrais para otimizar testosterona naturalmente. Acorde com foco, energia e motivação."
+      title: "Bioquímica do Foco",
+      description: "Entenda como dopamina, cortisol e adrenalina funcionam — e como otimizá-los sem substâncias externas."
     },
     {
       day: 3,
-      title: "Estoicismo Moderno",
-      description: "Aprenda COMO pensar, não o que pensar. Uma atualização do seu sistema operacional mental."
+      title: "Energia Sustentável",
+      description: "O sistema nervoso autônomo é a chave. Aprenda a ativá-lo para energia constante durante todo o dia."
     },
     {
       day: 4,
-      title: "Dopamina sob Controle",
-      description: "Os mecanismos para se sentir bem de verdade, sem vícios que estão te destruindo."
+      title: "Fim da Dependência",
+      description: "Protocolos para eliminar a necessidade de cafeína e energéticos. Seu corpo já produz o que você precisa."
     },
     {
       day: 5,
-      title: "Modo Predador",
-      description: "O passo a passo para tomar decisões e sair de onde você está para onde quer chegar."
+      title: "Performance Cognitiva",
+      description: "Técnicas de elite para tomada de decisão rápida, memória de trabalho e processamento de informação."
     },
     {
       day: 6,
-      title: "O Ingrediente Secreto",
-      description: "O segredo por trás da energia infinita que me permitiu levantar 240kg no terra."
+      title: "O Catalisador",
+      description: "A prática única que multiplica todos os resultados anteriores. Simples, mas transformadora."
     },
     {
       day: 7,
-      title: "Integração Total",
-      description: "Protocolo completo para manter energia, testosterona e clareza mental pelo resto da vida."
+      title: "Sistema Completo",
+      description: "Integração de tudo em um protocolo diário de 21 minutos. Resultados permanentes, não temporários."
     }
   ];
 
   return (
-    <section className="py-12 md:py-20 px-4 bg-background">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 px-2">
-          <span className="text-[hsl(var(--accent))]">7 Lições</span> do Desafio
+    <section className="py-20 md:py-32 px-6 bg-background">
+      <div className="max-w-2xl mx-auto">
+        <p className="text-sm font-medium tracking-widest uppercase text-[hsl(var(--accent))] text-center mb-4">
+          O Protocolo
+        </p>
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-4 tracking-tight">
+          7 dias. 21 minutos.
         </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-md mx-auto">
+          Cada lição constrói sobre a anterior. O resultado: independência energética.
+        </p>
         
         <Accordion type="single" collapsible className="space-y-3">
           {days.map((day) => (
             <AccordionItem 
               key={day.day} 
               value={`day-${day.day}`}
-              className="bg-card border border-border rounded-lg px-4 hover:border-[hsl(var(--accent))] transition-all"
+              className="bg-card border border-border rounded-2xl px-6 hover:border-[hsl(var(--accent)/0.5)] transition-all duration-300"
             >
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <div className="flex items-center gap-3 md:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[hsl(var(--accent))] flex items-center justify-center text-lg md:text-xl font-bold text-white">
+              <AccordionTrigger className="text-left hover:no-underline py-5">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[hsl(var(--accent))] flex items-center justify-center text-sm font-semibold text-white">
                     {day.day}
                   </div>
-                  <span className="text-base md:text-lg font-bold">{day.title}</span>
+                  <span className="text-base font-medium">{day.title}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pb-4 pl-14 md:pl-16">
+              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5 pl-14">
                 {day.description}
               </AccordionContent>
             </AccordionItem>
