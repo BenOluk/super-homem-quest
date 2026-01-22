@@ -4,6 +4,7 @@ import Bio from "@/components/Bio";
 import FinalCTA from "@/components/FinalCTA";
 import Guarantee from "@/components/Guarantee";
 import FAQ from "@/components/FAQ";
+import Whatsapp from "@/components/Whatsapp";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <FinalCTA />
       <Guarantee />
       <FAQ />
+      <Whatsapp/>
     </div>
   );
 };
